@@ -1,5 +1,10 @@
-import React from "react";
+/*
+Name: Ng Chi Kit Sid:1155108500
+Name: Cheng Mang Chun  Sid:1155108467
+Name: Yue Ka Long  Sid:1155110560
+*/
 
+import React from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Button, Container, Card, Table } from "react-bootstrap";
 
@@ -57,7 +62,7 @@ class AboutThisProjectPage extends React.Component {
                     (1155108500)
                   </li>
                   <li>
-                    <span className="page">Main Page</span>: done by Chun ()
+                    <span className="page">Main Page</span>: done by Chun (1155108467)
                   </li>
                   <li>
                     <span className="page">Location Page</span>: done by Jacky Ng (1155108500)

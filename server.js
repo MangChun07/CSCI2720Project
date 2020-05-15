@@ -1,3 +1,9 @@
+/*
+Name: Ng Chi Kit Sid:1155108500
+Name: Cheng Mang Chun  Sid:1155108467
+Name: Yue Ka Long  Sid:1155110560
+*/
+
 var path = require("path");
 var express = require("express");
 var webpack = require("webpack");
@@ -22,9 +28,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //var dbUri =
 // "mongodb+srv://jackyNg:jackyng@cluster0-7hx7m.gcp.mongodb.net/test?retryWrites=true&w=majority";
 
-//for my test only
-  var dbUri =
-   "mongodb+srv://JackyChun:qwer1234@cluster0-wt6nl.mongodb.net/test?authSource=admin&replicaSet=Cluster0-shard-0&readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=true";
+//for test only
+//  var dbUri =
+//  "mongodb+srv://JackyChun:qwer1234@cluster0-wt6nl.mongodb.net/test?authSource=admin&replicaSet=Cluster0-shard-0&readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=true";
   
   mongoose.connect(dbUri, {
   useNewUrlParser: true,

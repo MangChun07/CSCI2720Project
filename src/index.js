@@ -1,19 +1,14 @@
-// import React from "react";
-// import ReactDOM from "react-dom";
-//
-// // Importing the Bootstrap CSS
-// import 'bootstrap/dist/css/bootstrap.min.css';
-//
-// ReactDOM.render(<App />, document.getElementById("app"));
-// =======
+/*
+Name: Ng Chi Kit Sid:1155108500
+Name: Cheng Mang Chun  Sid:1155108467
+Name: Yue Ka Long  Sid:1155110560
+*/
+
 import React from "react";
 import ReactDOM from "react-dom";
 import { HashRouter, Route, Redirect, Switch } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-// import "assets/css/bootstrap.min.css";
-// import "./assets/scss/paper-kit.scss";
-// import "./assets/demo/demo.css";
 
 import MainPage from "./views/MainPage.js";
 import AdminPage from "./views/AdminPage.js";

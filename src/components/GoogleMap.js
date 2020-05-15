@@ -1,3 +1,9 @@
+/*
+Name: Ng Chi Kit Sid:1155108500
+Name: Cheng Mang Chun  Sid:1155108467
+Name: Yue Ka Long  Sid:1155110560
+*/
+
 import React from 'react';
 import { Map, Marker, GoogleApiWrapper} from 'google-maps-react';
 import axios from 'axios';
@@ -92,6 +98,8 @@ class GoogleMap extends React.Component{
                 >
                 </Marker>
         );
+
+        console.log("check loc detail",this.state.locationdetail);
 
         return(
             <div>

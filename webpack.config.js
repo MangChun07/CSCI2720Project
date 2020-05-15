@@ -1,3 +1,9 @@
+/*
+Name: Ng Chi Kit Sid:1155108500
+Name: Cheng Mang Chun  Sid:1155108467
+Name: Yue Ka Long  Sid:1155110560
+*/
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
