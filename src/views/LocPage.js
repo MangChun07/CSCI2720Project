@@ -54,8 +54,8 @@ class LocPage extends React.Component{
                             address: "",
                             phoneNum: "",
                             rating: "",
-                            latitude: "",
-                            longitude: ""
+                            latitude: null,
+                            longitude: null
                           },
                     }); 
                 }
@@ -63,6 +63,7 @@ class LocPage extends React.Component{
                     this.setState({
                         data: res.data.data
                     });  
+                    console.log(this.state.data);
                 }
             }
             else {
@@ -139,16 +140,16 @@ class LocPage extends React.Component{
                                 readOnly
                             />
                         </ListGroupItem>
-                        <ListGroupItem>Phone Number: {loc.phoneNum}</ListGroupItem>
+                        { this.state.notFav ?
+                            <Button id={loc.locationID} as="input" type="button" variant="success" value="Add favorite" onClick={() => this.addtofavorite(loc)}/>
+                            :
+                            <Button id={loc.locationID} as="input" type="button" variant="danger" value="Delete favorite" onClick={() => this.delFav(loc)}/>
+                        }
+                        {loc.phoneNum != null ? <ListGroupItem>Phone Number: {loc.phoneNum.toString().substring(3,7)} {loc.phoneNum.toString().substring(7,10)}</ListGroupItem> : null}
                     </ListGroup>
-                    { this.state.notFav ?
-                        <Button id={loc.locationID} as="input" type="button" variant="success" value="Add favorite" onClick={() => this.addtofavorite(loc)}/>
-                        :
-                        <Button id={loc.locationID} as="input" type="button" variant="danger" value="Delete favorite" onClick={() => this.delFav(loc)}/>
-                    }
                     <Card.Body style={{ height: '400px' }}>
-                        {loc.address}
-                        <GoogleMap showOne={true} locationdetail={this.state.data}/>
+                        Address: {loc.address}
+                        {this.state.data.latitude != null && this.state.data.longitude != null ? <GoogleMap showOne={true} locationdetail={this.state.data}/> : null }
                     </Card.Body>
                 </Card>
                 <CommentsContainer port={this.props.port} locID={this.state.locID}/>

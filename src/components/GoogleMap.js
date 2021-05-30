@@ -95,13 +95,11 @@ class GoogleMap extends React.Component{
 
         return(
             <div>
-                Your Home location: <button onClick={this.addingupdatingHome}>Add/Update Home</button>
-                <br/>{this.state.home[0]}, {this.state.home[1]}
                 <div>
                     {this.props.showOne ?
                         <Map
                             google={this.props.google}
-                            zoom={15}
+                            zoom={17}
                             initialCenter={{
                                 lat: this.props.locationdetail.latitude,
                                 lng: this.props.locationdetail.longitude
@@ -120,27 +118,32 @@ class GoogleMap extends React.Component{
                             />
                         </Map>
                         :
-                        <Map
-                            google={this.props.google}
-                            onClick={this.mapClicked}
-                            zoom={15}
-                            initialCenter={{
-                                lat: 22.419589,
-                                lng: 114.206657
-                            }}
-                            style={style}
-                        >
-                            <Marker
-                                icon={{
-                                    url: "http://maps.google.com/mapfiles/kml/pushpin/red-pushpin.png",
-                                    anchor: new google.maps.Point(32,32),
-                                    scaledSize: new google.maps.Size(32,32)
+                        <div>
+                            Your Home location: <button onClick={this.addingupdatingHome}>Add/Update Home</button>
+                            <br/>
+                            {this.state.home.length == 0 ? null : <div>{this.state.home[0]}, {this.state.home[1]}</div>}
+                            <Map
+                                google={this.props.google}
+                                onClick={this.mapClicked}
+                                zoom={15}
+                                initialCenter={{
+                                    lat: 22.419589,
+                                    lng: 114.206657
                                 }}
-                                position={{lat: this.state.home[1], lng: this.state.home[0]}}
-                                title = {'your home'}
-                            />
-                            {markers}
-                        </Map>
+                                style={style}
+                            >
+                                <Marker
+                                    icon={{
+                                        url: "http://maps.google.com/mapfiles/kml/pushpin/red-pushpin.png",
+                                        anchor: new google.maps.Point(32,32),
+                                        scaledSize: new google.maps.Size(32,32)
+                                    }}
+                                    position={{lat: this.state.home[1], lng: this.state.home[0]}}
+                                    title = {'your home'}
+                                />
+                                {markers}
+                            </Map>
+                        </div>
                     }
                 </div>
             </div>
@@ -149,5 +152,5 @@ class GoogleMap extends React.Component{
 }
 
 export default GoogleApiWrapper({
-    apiKey: ('AIzaSyAg7Rvrm8aUEw01iUi8QNlUVVsVVMJoAYM')
+    apiKey: ('AIzaSyDADNEgbx24tqfhZruYywQx4-Tya5X5xKM')
    })(GoogleMap);;

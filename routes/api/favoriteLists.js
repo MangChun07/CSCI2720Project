@@ -77,29 +77,36 @@ router.put('/delfav', (req, res) => {
 
 router.post('/checkfav', (req, res) => {
     Location.findOne({ locationID: req.body.favouriteID}, (err, loc)=>{
-        FavoriteList.find(
-            {userID: req.session.userID,favorite: { $in: [ loc.locationID ]} },
-            (err, fav) => {
-                if(err){
-                console.log(err);
-                return res.send({
-                    error: err,
-                    success:false
-                })
-                }
-                else{
-                if(fav.length > 0){
+        if (loc == null){
+            return res.send({
+                notFav: true
+            });
+        }
+        else {
+            FavoriteList.find(
+                {userID: req.session.userID,favorite: { $in: [ loc.locationID ]} },
+                (err, fav) => {
+                    if(err){
+                    console.log(err);
                     return res.send({
-                        notFav: false
-                    });
-                }
-                else{
-                    return res.send({
-                        notFav: true
-                    });
-                }
-                }
-        });
+                        error: err,
+                        success:false
+                    })
+                    }
+                    else{
+                    if(fav.length > 0){
+                        return res.send({
+                            notFav: false
+                        });
+                    }
+                    else{
+                        return res.send({
+                            notFav: true
+                        });
+                    }
+                    }
+            });
+        }
     });
 })
 
